@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import './App.css'
+export default function App(){
+    const [count,setCount]=React.useState(0)
+    function minus(){
+        setCount(prev=>prev-1)
+    }
+    function plus(){
+        setCount(prev=>prev+1)
+    }
+    return(
+        <div className='usestate'>
+            <button className='btn1' onClick={minus}>-</button>
+            <h1 className='number'>{count}</h1>
+            <button className='btn2' onClick={plus}>+</button>
+        </div>
+    )
 }
-
-export default App;
